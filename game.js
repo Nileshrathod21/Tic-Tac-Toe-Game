@@ -41,7 +41,7 @@ acessinjs.forEach((box) => {
 
     let iswinner = checkwinner();
 
-    if (count === acessinjs && !iswinner) {
+    if (count === acessinjs.length && !iswinner) {
       drowbox();
     }
 
@@ -50,7 +50,7 @@ acessinjs.forEach((box) => {
 });
 
 const drowbox = () => {
-  msg.innerText = `The game was Drow `;
+  winner.innerText = `The game was Drow `;
   container.classList.remove("hide");
   disabledbtn();
 };
@@ -86,7 +86,7 @@ const checkwinner = () => {
         console.log("winner", posval1);
 
         showwinner(posval1);
-        checkwinner();
+        return true;
       }
     }
   }
